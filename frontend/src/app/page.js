@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="box">
       <Button1/>
-      {/* <GroceryList/> */}
+      <GroceryList/> 
       <Fridge/>
       <Expired/>
       <Recipe/>
