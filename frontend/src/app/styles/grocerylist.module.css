@@ -1,0 +1,8 @@
+.block {
+    width: 260px;
+    height: 378px;
+    flex-shrink: 0;
+    border-radius: 42px;
+    background: '#297BD4';
+    font-size: 25;
+}

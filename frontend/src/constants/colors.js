@@ -15,12 +15,13 @@ export const Colors = {
     tabIconDefault: '#687076',
     tabIconSelected: tintColorLight,
 
-    blue1: '#F98FB6',
-    blue2: '#FFF186',
-    blue3: '#B2E3FA',
-    blue4: '#C7CBFF',
+    blue1: '#A3CCE0',
+    blue2: '#00ABFA',
+    blue3: '#297BD4',
+    blue4: '#031996',
+    blue5: '064972',
     white: '#C1C6E1',
-    grey: '#FCFCFC'
+    grey: '#D9D9D9'
     
   },
   dark: {
