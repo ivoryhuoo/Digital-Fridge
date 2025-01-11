@@ -11,11 +11,15 @@ import styles from "../styles/grocerylist.module.css";
 
 export default function grocerylist() {
     return (
-        <div className={styles.block}>
-            butt
-            <h1 className={styles.title}>
-            digifridge
-        </h1>
+        <div
+            className={styles.frame}
+            style={{
+                width: "100px",
+                height: "100px",
+                backgroundColor: "#ff0000",
+            }}
+        >
+            Test
         </div>
-    )
+    );
 }
