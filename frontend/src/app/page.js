@@ -3,6 +3,7 @@ import GroceryList from './components/grocerylist.js';
 import Fridge from './components/fridge.js';
 import Expired from './components/expired.js';
 import Recipe from './components/recipe.js';
+import styles from './styles/globals.css'
 // import styles from "./styles/page.css"
 
 export default function Home() {
