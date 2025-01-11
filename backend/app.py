@@ -59,21 +59,20 @@ def store_item():
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
-# Define the /getAllItems route
 @app.route("/getAllItems", methods=["GET"])
 def get_all_items():
     try:
-        # Query all items from the database
-        items = Item.query.all()
+        # Query all items sorted by expiration_date in ascending order
+        items = Item.query.order_by(Item.expiration_date.asc()).all()
 
-        # Convert each item's date_added to local timezone
+        # Prepare response
         response = []
         for item in items:
             response.append({
                 "id": item.id,
                 "name": item.name,
                 "expiration_date": item.expiration_date.strftime("%Y-%m-%d %H:%M:%S"),
-                "date_added": item.date_added.strftime("%Y-%m-%d %H:%M:%S"),  # Convert to local timezone
+                "date_added": item.date_added.strftime("%Y-%m-%d %H:%M:%S"),
                 "quantity": item.quantity,
             })
 
