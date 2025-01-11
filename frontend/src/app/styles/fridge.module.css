@@ -56,8 +56,17 @@ html, body
     margin-top: 4%;
     display: flex;
     align-items: flex-end;
+    position: relative;
 }
-
+.empties {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Match parent width */
+    height: 100%; /* Match parent height */
+    position: relative; /* Ensure relative positioning for children */
+    gap: 5%;
+}
 .shelves {
     z-index: 100;
     width: 100%;
@@ -65,10 +74,9 @@ html, body
     flex-shrink: 0;
     background: var(--blue4);
     display: flex;
+    position: absolute;
+
 }
 
-/* .empty {
-
-} */
 
 
