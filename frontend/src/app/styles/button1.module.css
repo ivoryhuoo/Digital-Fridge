@@ -1,0 +1,20 @@
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --blue1: #A3CCE0;
+    --blue2: #00ABFA;
+    --blue3: #297BD4;
+    --blue4: #031996;
+    --blue5: #064972;
+    --white: #C1C6E1;
+    --grey: #D9D9D9;
+    --beige: #EEEBEB;
+}
+
+.main {
+    border-radius: 65px;
+    background: var(--beige);
+    width: 285px;
+    height: 81px;
+    flex-shrink: 0;
+}
