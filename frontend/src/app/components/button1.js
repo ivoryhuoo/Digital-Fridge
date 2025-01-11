@@ -2,6 +2,8 @@
 import styles from "../styles/button1.module.css";
 import { Button } from "react-bootstrap";
 import { useState } from 'react';
+import Popup1 from './popup1.js';
+
 
 export default function button1() {
     const [clicked, setClicked] = useState(false);
@@ -23,7 +25,7 @@ export default function button1() {
         
                 <h1 className={styles.text}>Add Fridge Item</h1>
             </Button>
-            {clicked && <p>Button was clicked!</p>}
+            {clicked && <Popup1/>}
         </div>
     )
 }
