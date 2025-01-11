@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <div>
-        <GroceryList/>
+        {/* <GroceryList/> */}
         <Fridge/>
         <Expired/>
         <Recipe/>
