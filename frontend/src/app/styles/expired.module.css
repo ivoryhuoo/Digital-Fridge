@@ -11,12 +11,57 @@
 }
 
 .frame {
-    position: relative;
-    width: 25%; 
-    height: 25vh;
-    background: var(--blue6);
+    position: relative; /* Needed for absolute positioning of children */
+    width: 25%;
+    height: 25vh; 
+    background: var(--blue2);
     border-radius: 42px;
     margin-right: 3%;
-    margin-top: -10%;
+    margin-top: 3%;
     margin-left: 35%;
+    padding: 10px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.alert_icon {
+    position: absolute; /* Place the icon above the scroll */
+    top: 5.5%; /* Adjust position within the frame */
+    left: 6%; /* Adjust position within the frame */
+    z-index: 2; /* Ensure it's above the .scroll element */
+    width: 40px; 
+    height: 40px; 
+}
+
+.scroll {
+    position: relative; /* Keep it positioned within the .frame */
+    width: 90%; 
+    height: 65%; 
+    overflow-y: auto; 
+    background: var(--blue2); 
+    margin-top: 10%; /* Push it down to avoid overlapping with the SVG */
+    z-index: 1; /* Ensure it is below the .alert_icon */
+}
+
+/* Style the scrollbar */
+.scroll::-webkit-scrollbar {
+    width: 4px; 
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background: var(--blue3);
+    border-radius: 8px;
+}
+
+.scroll::-webkit-scrollbar-track {
+    background: var(--grey); 
+    border-radius: 8px;
+}
+
+/* For Mozilla Firefox */
+.scroll {
+    scrollbar-width: thin; 
+    scrollbar-color: var(--blue3) var(--grey); 
 }
