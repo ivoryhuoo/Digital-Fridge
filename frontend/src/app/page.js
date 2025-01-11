@@ -3,18 +3,18 @@ import GroceryList from './components/grocerylist.js';
 import Fridge from './components/fridge.js';
 import Expired from './components/expired.js';
 import Recipe from './components/recipe.js';
-import styles from './styles/globals.css'
+import Button1 from './components/button1.js';
+import './styles/globals.css'
 // import styles from "./styles/page.css"
 
 export default function Home() {
   return (
-    <div>
-      <div>
-        {/* <GroceryList/> */}
-        <Fridge/>
-        <Expired/>
-        <Recipe/>
-      </div>
+    <div className="box">
+      <Button1/>
+      {/* <GroceryList/> */}
+      <Fridge/>
+      <Expired/>
+      <Recipe/>
     </div>
     // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
     //   <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
