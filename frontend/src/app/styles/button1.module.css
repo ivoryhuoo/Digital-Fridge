@@ -17,4 +17,30 @@
     width: 285px;
     height: 81px;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 1%
+}
+
+.text {
+    color: black;
+    font-family: Outfit;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 10%
+}
+
+.icon {
+    position: relative;
+}
+
+.add {
+    z-index: 100;
+    margin-top: -68%;
+    margin-left: 25%;
+    /* this is bad fix later */
+    position: absolute
 }
