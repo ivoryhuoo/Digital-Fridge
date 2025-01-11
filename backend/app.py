@@ -1,4 +1,3 @@
-# from timezone_utils import *  # Import the utility function for timezone conversion
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
@@ -59,13 +58,14 @@ def store_item():
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
+# Define the /getAllItems route
 @app.route("/getAllItems", methods=["GET"])
 def get_all_items():
     try:
-        # Query all items sorted by expiration_date in ascending order
+        # Query all items sorted by expiration_date in ascending order (earliest to latest)
         items = Item.query.order_by(Item.expiration_date.asc()).all()
 
-        # Prepare response
+        # Prepare the response
         response = []
         for item in items:
             response.append({
