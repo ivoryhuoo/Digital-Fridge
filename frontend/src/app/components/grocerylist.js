@@ -10,16 +10,27 @@ import styles from "../styles/grocerylist.module.css";
 // }
 
 export default function grocerylist() {
-    return (
-        <div
-            className={styles.frame}
-            style={{
-                width: "100px",
-                height: "100px",
-                backgroundColor: "#ff0000",
-            }}
-        >
-            Test
+   return ( 
+
+        <div className={styles.container}>
+            <div className={styles.frame}>
+
+            </div>
+
+            <div className={styles.lining}>
+
+            </div>
+
+            <div className={styles.lining2}>
+                
+            </div>
+            <div className={styles.linecontain}>
+            </div>
+
+
+
+            
+
         </div>
     );
 }

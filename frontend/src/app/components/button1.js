@@ -1,3 +1,4 @@
+"use client";
 import styles from "../styles/button1.module.css";
 import { Button } from "react-bootstrap";
 import { useState } from 'react';
