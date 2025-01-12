@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 from datetime import datetime
 from flask_cors import CORS
+from dateutil import parser
 import os
 import requests
 
@@ -53,10 +54,15 @@ def store_item():
         if not all(key in data for key in ("name", "expiration_date", "quantity")):
             return jsonify({"error": "Missing required fields"}), 400
 
+        # Parse dates using dateutil.parser
+        expiration_date = parser.parse(data["expiration_date"])
+        date_added = parser.parse(data["date_added"])
+
         # Create a new item instance
         new_item = Item(
             name=data["name"],
-            expiration_date=datetime.strptime(data["expiration_date"], "%Y-%m-%dT%H:%M:%S"),
+            expiration_date=expiration_date,
+            date_added=date_added,
             quantity=data["quantity"]
         )
 
