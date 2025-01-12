@@ -1,7 +1,7 @@
 "use client";
 import styles from "../styles/fridge.module.css";
 import { useState } from 'react';
-import {Tooltip} from "@nextui-org/react";
+import { Tooltip } from "@nextui-org/react";
 import { Button } from "react-bootstrap";
 
 export default function fridge() {
@@ -26,7 +26,7 @@ export default function fridge() {
                         <ellipse cx="32.5" cy="9" rx="32.5" ry="9" fill="#D9D9D9"/>
                     </svg>
                     </Tooltip> */}
-                    {clicked && <p>yoo</p>}
+                    {clicked && <p>Shared State: {sharedState}</p>}
                     {/* <Tooltip content="I am a tooltip">
                     <Button>Hover me</Button>
                     </Tooltip> */}

@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import React, { useState } from "react";
 import GroceryList from './components/grocerylist.js';
 import Fridge from './components/fridge.js';
 import Expired from './components/expired.js';
@@ -8,10 +10,18 @@ import './styles/globals.css'
 // import styles from "./styles/page.css"
 
 export default function Home() {
+  const [state, setState] = useState("Initial State");
+
+  const handleClick = (newState) => {
+    setState(newState); // Update the shared state
+  };
+
   return (
     <div className="box">
+      {/* <Button1 onClickChange={handleClick}/> */}
       <Button1/>
       <GroceryList/> 
+      {/* <Fridge sharedState={state}/> */}
       <Fridge/>
       <Recipe/>
       <Expired/>

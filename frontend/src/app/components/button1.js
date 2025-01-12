@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Popup1 from './popup1.js';
 
 
-export default function button1() {
+export default function button1({onClickChange}) {
     const [clicked, setClicked] = useState(false);
     const handleClick = () => {
         setClicked(true);
