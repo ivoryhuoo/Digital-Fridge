@@ -60,7 +60,10 @@ export default function recipe() {
                 strokeLinejoin="round"/>
             </svg>
             <div className={styles.text}> Suggested Recipes</div>
-            <div className={styles.description}> {recipeName} </div>
+            <div className={styles.description}>
+                <div>{recipeName}</div>
+                <div className={styles.additionalText}>Additional Text</div>
+            </div>
         </div>
         
     )
