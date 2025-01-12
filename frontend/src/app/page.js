@@ -7,6 +7,7 @@ import Expired from './components/expired.js';
 import Recipe from './components/recipe.js';
 import Button1 from './components/button1.js';
 import './styles/globals.css'
+import Social from "./components/social.js";
 
 export default function Home() {
   const [state, setState] = useState("Initial State");
@@ -31,6 +32,7 @@ export default function Home() {
       <Fridge/>
       <Recipe/>
       <Expired/>
+      <Social/>
     </div>
   );
 }
