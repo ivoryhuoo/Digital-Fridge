@@ -16,8 +16,9 @@
     height: 45vh; /*height of container*/
 
     /*adjust margins */
-    margin-top: 20%; 
+    margin-top: 40%; 
     margin-left: 12%;
+    margin-bottom: -40%;
 }
 .frame {
     position: absolute; /* Stack element relative to the container */
@@ -56,7 +57,7 @@
     background: #FFF;
     z-index: 2;
 }
-.liningcontain{
+.linecontain{
     position: absolute;
     /*adjust position*/
     top: 30%;
@@ -66,4 +67,131 @@
     height: 0.5%;
     background: #FFF;
     z-index: 2;
+    
+}
+.lining3{
+    position: absolute;
+    /*adjust position*/
+    top: 37%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining4{
+    position: absolute;
+    /*adjust position*/
+    top: 44%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining5{
+    position: absolute;
+    /*adjust position*/
+    top: 51%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining6{
+    position: absolute;
+    /*adjust position*/
+    top: 58%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining7{
+    position: absolute;
+    /*adjust position*/
+    top: 65%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining8{
+    position: absolute;
+    /*adjust position*/
+    top: 72%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining9{
+    position: absolute;
+    /*adjust position*/
+    top: 79%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining10{
+    position: absolute;
+    /*adjust position*/
+    top: 79%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining11{
+    position: absolute;
+    /*adjust position*/
+    top: 86%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.checkbox{
+    width: 22%;
+    height: 12%;
+    flex-shrink: 0;
+    z-index: 2000;
+    position: absolute
+
+   
 }
