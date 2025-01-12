@@ -1,0 +1,116 @@
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --blue1: #A3CCE0;
+    --blue2: #00ABFA;
+    --blue3: #297BD4;
+    --blue4: #031996;
+    --blue5: #064972;
+    --white: #C1C6E1;
+    --grey: #D9D9D9;
+    --beige: #EEEBEB;
+}
+
+.backdisplay {
+    z-index: 100000;
+    background-color: var(--blue1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.hold {
+    background: var(--beige);
+    border-radius: 16px;
+    width: 95%;
+    max-width: 800px;
+    height: 95%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 4vw;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--blue4);
+}
+
+.arrow {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.recipeImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 16px 0;
+}
+
+.description {
+    font-size: 1.5vw;
+    margin: 10px 0;
+    text-align: center;
+    color: var(--foreground);
+}
+
+.ingredientsList {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.ingredientItem {
+    flex: 1 1 calc(50% - 10px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ingredientImage {
+    width: 60px; /* Larger size for better scaling */
+    height: 60px; /* Larger size for better scaling */
+    border-radius: 50%; /* Keep the image circular */
+    object-fit: contain; /* Ensure the image scales properly within the circle */
+    background-color: #ffffff; /* Set background color to white */
+    padding: 5px; /* Add padding for spacing inside the circle */
+    border: 1px solid #d9d9d9; /* Optional: Add a subtle border for definition */
+}
+
+
+.close {
+    background: #354052;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    align-self: center;
+}

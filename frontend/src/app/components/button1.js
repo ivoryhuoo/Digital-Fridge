@@ -3,6 +3,7 @@ import styles from "../styles/button1.module.css";
 import { Button } from "react-bootstrap";
 import { useState } from 'react';
 import Popup1 from './popup1.js';
+import Popup2 from './popup2.js'; 
 
 function Button1() {
     const [clicked, setClicked] = useState(false);
@@ -45,7 +46,7 @@ function Button2() {
                 </div>
                 <h1 className={styles.text}>Generate Recipe</h1>
             </Button>
-            {clicked && <Popup1 onClose={handleClose} />}
+            {clicked && <Popup2 onClose={handleClose} />}
         </div>
     );
 }
