@@ -7,7 +7,7 @@ import Expired from './components/expired.js';
 import Recipe from './components/recipe.js';
 import Button1 from './components/button1.js';
 import './styles/globals.css'
-// import styles from "./styles/page.css"
+import Social from "./components/social.js";
 
 export default function Home() {
   const [state, setState] = useState("Initial State");
@@ -32,13 +32,7 @@ export default function Home() {
       <Fridge/>
       <Recipe/>
       <Expired/>
-      <div className="social-container">
-        <Image
-          src="/images/social media.png" // Adjust path based on logo location
-          width={400} // Adjust width as needed
-          height={400} // Adjust height as needed
-        />
-      </div>
+      <Social/>
     </div>
   );
 }
