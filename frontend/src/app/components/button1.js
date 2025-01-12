@@ -11,6 +11,10 @@ export default function button1() {
         setClicked(true);
         // Additional logic can go here (e.g., showing a modal, adding an item, etc.)
     }
+    const handleClose = () => {
+        setClicked(false);
+        // Additional logic can go here (e.g., showing a modal, adding an item, etc.)
+    }
     return (
         <div>
             <Button className={styles.main} onClick={handleClick}>
@@ -25,7 +29,7 @@ export default function button1() {
         
                 <h1 className={styles.text}>Add Fridge Item</h1>
             </Button>
-            {clicked && <Popup1/>}
+            {clicked && <Popup1 onClose={handleClose}/>}
         </div>
     )
 }
