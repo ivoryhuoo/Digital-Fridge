@@ -51,6 +51,7 @@ export default function Popup1({ onClose }) {
     
     return (
         <div className={styles.backdisplay}>
+            <div className={styles.hold}>
             <svg
                 className={styles.arrow}
                 onClick={onClose}
@@ -65,11 +66,13 @@ export default function Popup1({ onClose }) {
                     fill="#031996"
                 />
             </svg>
-            <div className={styles.hold}>
                 <h1 className={styles.title}>Add Fridge Item</h1>
                 <form className={styles.form} onSubmit={handleAddItem}>
-                    <label htmlFor="item-name">Item Name:</label>
+                    <div className={styles.contain}>
+                    <div className={styles.item}>
+                    <label className={styles.name} htmlFor="item-name">Item Name:</label>
                     <input
+                        className={styles.fill}
                         type="text"
                         id="item-name"
                         name="item-name"
@@ -77,8 +80,11 @@ export default function Popup1({ onClose }) {
                         onChange={(e) => setItemName(e.target.value)}
                         required
                     />
-                    <label htmlFor="quantity">Quantity:</label>
+                    </div>
+                    <div className={styles.item}>
+                    <label className={styles.name} htmlFor="quantity">Quantity:</label>
                     <input
+                        className={styles.fill}
                         type="number"
                         id="quantity"
                         name="quantity"
@@ -86,8 +92,11 @@ export default function Popup1({ onClose }) {
                         onChange={(e) => setQuantity(e.target.value)}
                         required
                     />
-                    <label htmlFor="date-added">Date Added:</label>
+                    </div>
+                    <div className={styles.item}>
+                    <label className={styles.name} htmlFor="date-added">Date Added:</label>
                     <input
+                        className={styles.fill}
                         type="datetime-local"
                         id="date-added"
                         name="date-added"
@@ -95,14 +104,19 @@ export default function Popup1({ onClose }) {
                         onChange={(e) => setDateAdded(e.target.value)}
                         required
                     />
-                    <label htmlFor="expiration-date">Expiration Date:</label>
+                    </div>
+                    <div className={styles.item}>
+                    <label className={styles.name} htmlFor="expiration-date">Expiration Date:</label>
                     <input
+                        className={styles.fill}
                         type="datetime-local"
                         id="expiration-date"
                         name="expiration-date"
                         value={expirationDate}
                         onChange={(e) => setExpirationDate(e.target.value)}
                     />
+                    </div>
+                    </div>
                     <button className={styles.close} type="submit">
                         Add
                     </button>

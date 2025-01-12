@@ -19,10 +19,10 @@ export default function Home() {
   return (
     <div className="box">
       <div className="logo-container">
-        <Image
+        <Image className="photo"
           src="/images/logo.png" // Adjust path based on logo location
           width={900} // Adjust width as needed
-          height={900} // Adjust height as needed
+          height={800} // Adjust height as needed
         />
       </div>
       {/* <Button1 onClickChange={handleClick}/> */}

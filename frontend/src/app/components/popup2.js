@@ -110,7 +110,7 @@ export default function Popup2({ onClose }) {
                     />
                 </svg>
                 <h1 className={styles.title}>{title}</h1>
-                <p>Likes: {likes}</p>
+                <p>Spoonacular Likes: {likes}</p>
                 <img src={image} alt={title} className={styles.recipeImage} />
                 <h2>Used Ingredients</h2>
                 <ul className={styles.ingredientsList}>

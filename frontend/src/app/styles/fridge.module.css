@@ -1,13 +1,13 @@
 
 .frame {
-    margin-right: 3%;
-    margin-top: -10%;
+    margin-right: 5%;
+    margin-top: -9%;
     float: right;
     width: 32%;
     height: 83vh;
     flex-shrink: 0;
     border-radius: 61px;
-    background: var(--blue4);
+    background: #0067C1;
     font-size: 25;
     justify-content: center;
     position: relative;
@@ -62,15 +62,15 @@
     width: 100%;
     height: 23%;
     flex-shrink: 0;
-    background: var(--blue4);
+    background: #0067C1;
     display: flex;
     position: absolute;
 }
 
 .info {
     border-radius: 18px;
-    border: 2px solid var(--blue4);
-    background: var(--white);
+    border: 3px solid #000000;
+    background-color: #FFFFFF;
     width: 220px; /* Increased width */
     height: auto; /* Adjust height automatically */
     padding: 10px; /* Add padding for better spacing */

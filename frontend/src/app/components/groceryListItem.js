@@ -56,8 +56,9 @@ export default function GroceryListItem({ cname, callback }) {
             fontSize: "12px",
             textDecoration: isFilled ? "line-through" : "none",
             color: isFilled ? "gray" : "black",
-            border: "1px solid #ccc",
-            borderRadius: "2px",
+            borderBottom: "1px solid #ccc", // Only apply the border to the bottom
+            borderRadius: "0", // Remove rounded corners since it’s only a bottom border
+            backgroundColor: "transparent",
           }}
         />
       </div>

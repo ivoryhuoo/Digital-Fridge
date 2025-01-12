@@ -48,3 +48,10 @@ body {
 .box {
   align-items: center;
 }
+
+.photo {
+  margin-top: -2%;
+  margin-bottom: -5%;
+  margin-left: -5%;
+  height: 17%;
+}

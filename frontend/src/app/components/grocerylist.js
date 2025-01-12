@@ -8,7 +8,7 @@ export default function grocerylist() {
    return ( 
         <div className={styles.container}>
             <div className={styles.frame}>
-                <div className={styles.text}>Checklist</div>
+                <div className={styles.text}>Grocery List</div>
             </div>
 
             <div className={styles.lining}>
