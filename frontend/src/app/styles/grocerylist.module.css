@@ -159,21 +159,8 @@
     background: #FFF;
     z-index: 2;
     
-}
+}   
 .lining10{
-    position: absolute;
-    /*adjust position*/
-    top: 79%;
-    left: 15%;
-
-    /*adjust size*/
-    width: 73%;
-    height: 0.5%;
-    background: #FFF;
-    z-index: 2;
-    
-}
-.lining11{
     position: absolute;
     /*adjust position*/
     top: 86%;
@@ -186,12 +173,85 @@
     z-index: 2;
     
 }
-.checkbox{
+.checkbox1{
+    position: absolute;
+    top: 28%;
+    left: 7%;
     width: 22%;
     height: 12%;
     flex-shrink: 0;
-    z-index: 2000;
-    position: absolute
-
+    z-index: 2;
    
+}
+.checkbox2{
+    position: absolute;
+    top: 35%;
+    left: 7%;
+    width: 22%;
+    height: 12%;
+    flex-shrink: 0;
+    z-index: 2;
+}
+.checkbox3{
+    position: absolute;
+    top: 42%;
+    left: 7%;
+    width: 22%;
+    height: 12%;
+    flex-shrink: 0;
+    z-index: 2;
+}
+.checkbox4{
+    position: absolute;
+    top: 49%;
+    left: 7%;
+    width: 22%;
+    height: 12%;
+    flex-shrink: 0;
+    z-index: 2;
+}
+.checkbox5{
+    position: absolute;
+    top: 56%;
+    left: 7%;
+    width: 22%;
+    height: 12%;
+    flex-shrink: 0;
+    z-index: 2;
+}
+.checkbox6{
+    position: absolute;
+    top: 63%;
+    left: 7%;
+    width: 22%;
+    height: 12%;
+    flex-shrink: 0;
+    z-index: 2;
+}
+.checkbox7{
+    position: absolute;
+    top: 70%;
+    left: 7%;
+    width: 22%;
+    height: 12%;
+    flex-shrink: 0;
+    z-index: 2;
+}
+.checkbox8{
+    position: absolute;
+    top: 77%;
+    left: 7%;
+    width: 22%;
+    height: 12%;
+    flex-shrink: 0;
+    z-index: 2;
+}
+.checkbox9{
+    position: absolute;
+    top: 84%;
+    left: 7%;
+    width: 22%;
+    height: 12%;
+    flex-shrink: 0;
+    z-index: 2;
 }
