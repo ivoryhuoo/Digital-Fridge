@@ -127,7 +127,6 @@ def get_all_items():
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
-# Define the /generateRecipe route
 @app.route("/generateRecipe", methods=["POST"])
 def generate_recipe():
     try:
@@ -142,7 +141,7 @@ def generate_recipe():
         # Create request parameters for Spoonacular
         params = {
             "ingredients": ingredients,
-            "number": 1,  # Limit to 1 recipe
+            "number": 1,  # Get up to 1 recipes
             "ranking": 1,  # Maximize used ingredients
             "ignorePantry": True,
             "apiKey": os.getenv('SPOONACULAR_API_KEY')  # Use your Spoonacular API key
@@ -156,7 +155,9 @@ def generate_recipe():
 
         # Check the response from Spoonacular
         if response.status_code == 200:
-            return jsonify(response.json()), 200
+            recipes = response.json()
+            # Return the list of recipes with IDs and other details
+            return jsonify(recipes), 200
         else:
             return jsonify({"error": response.json()}), response.status_code
 
@@ -232,6 +233,31 @@ def reset_database():
         # Recreate all tables
         db.create_all()
         return jsonify({"message": "Database reset successfully"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
+
+@app.route("/getRecipeDetails/<int:recipe_id>", methods=["GET"])
+def get_recipe_details(recipe_id):
+    try:
+        # Prepare request parameters
+        params = {
+            "includeNutrition": False,  # Change to True if you want nutrition info
+            "apiKey": os.getenv('SPOONACULAR_API_KEY')  # Use your Spoonacular API key
+        }
+
+        # Call Spoonacular API for recipe details
+        response = requests.get(
+            f"https://api.spoonacular.com/recipes/{recipe_id}/information",
+            params=params
+        )
+
+        # Check response from Spoonacular
+        if response.status_code == 200:
+            return jsonify(response.json()), 200
+        else:
+            return jsonify({"error": response.json()}), response.status_code
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
