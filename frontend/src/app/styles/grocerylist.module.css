@@ -16,9 +16,14 @@
     height: 45vh; /*height of container*/
 
     /*adjust margins */
+<<<<<<< HEAD
     margin-top: 40%; 
     margin-left: 12%;
     margin-bottom: -40%;
+=======
+    margin-top: 20%; 
+    margin-left: 12%;
+>>>>>>> 47166de4f9242a2828b36d3a38ae769bd2b3090f
 }
 .frame {
     position: absolute; /* Stack element relative to the container */
@@ -57,7 +62,11 @@
     background: #FFF;
     z-index: 2;
 }
+<<<<<<< HEAD
 .linecontain{
+=======
+.liningcontain{
+>>>>>>> 47166de4f9242a2828b36d3a38ae769bd2b3090f
     position: absolute;
     /*adjust position*/
     top: 30%;
@@ -67,6 +76,7 @@
     height: 0.5%;
     background: #FFF;
     z-index: 2;
+<<<<<<< HEAD
     
 }
 .lining3{
@@ -194,4 +204,6 @@
     position: absolute
 
    
+=======
+>>>>>>> 47166de4f9242a2828b36d3a38ae769bd2b3090f
 }
