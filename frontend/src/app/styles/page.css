@@ -19,3 +19,17 @@ body {
     border-radius: 42px;
     background: var(--blue3);
 }
+
+.logo-container {
+    display: none; /* This would hide the image */
+    visibility: hidden; /* This would also hide it */
+  }
+
+  .social-container {
+    margin-left: 100px; /* Move it to the left */
+    margin-top: -50px; /* Move it up (negative values bring it closer to the top) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Ensure it responds to positioning adjustments */
+}
