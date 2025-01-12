@@ -1,6 +1,7 @@
 "use client";
 import styles from "../styles/fridge.module.css";
 import { useState } from 'react';
+import {Tooltip, Button} from "@nextui-org/react";
 
 export default function fridge() {
     const [clicked, setClicked] = useState(false);
@@ -17,6 +18,9 @@ export default function fridge() {
                     <svg xmlns="http://www.w3.org/2000/svg" width="65" height="18" viewBox="0 0 65 18" fill="none">
                         <ellipse cx="32.5" cy="9" rx="32.5" ry="9" fill="#D9D9D9"/>
                     </svg>
+                    <Tooltip content="I am a tooltip">
+                    <Button>Hover me</Button>
+                    </Tooltip>
                     <svg xmlns="http://www.w3.org/2000/svg" width="65" height="18" viewBox="0 0 65 18" fill="none">
                         <ellipse cx="32.5" cy="9" rx="32.5" ry="9" fill="#D9D9D9"/>
                     </svg>
