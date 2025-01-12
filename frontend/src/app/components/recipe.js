@@ -1,11 +1,16 @@
 "use client";
+import { Button } from "react-bootstrap";
 
 import React, { useState, useEffect } from "react";
 import styles from "../styles/recipe.module.css";
+import Popup2 from './popup2.js'; 
 
 export default function Recipe() {
     const [recipeName, setRecipeName] = useState("Loading...");
     const [likes, setLikes] = useState(null); // State to store likes
+    const [clicked, setClicked] = useState(false);
+    const handleClick = () => setClicked(true);
+    const handleClose = () => setClicked(false);
 
     useEffect(() => {
         const fetchRecipe = async () => {
@@ -33,6 +38,12 @@ export default function Recipe() {
     return (
         <div className={styles.frame}>
             {/* Expand Icon */}
+            <Button onClick={handleClick}>
+            
+            
+            
+        
+
             <svg
                 className={styles.expand_icon}
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,6 +60,8 @@ export default function Recipe() {
                     strokeLinejoin="round"
                 />
             </svg>
+            </Button>
+            {clicked && <Popup2 onClose={handleClose} />}
 
             {/* Bowl Icon */}
             <svg
