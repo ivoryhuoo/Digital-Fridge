@@ -5,9 +5,11 @@ import React from "react";
 
 export default function Popup2({ onClose }) {
     const [recipe, setRecipe] = useState(null);
+    const [details, setDetails] = useState(null); // Recipe details
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        // Fetch the generated recipe
         const fetchRecipe = async () => {
             try {
                 const response = await fetch("http://127.0.0.1:5000/generateRecipe", {
@@ -18,15 +20,36 @@ export default function Popup2({ onClose }) {
                 });
 
                 const data = await response.json();
-                console.log(data); // Log the fetched data to debug
+                console.log("Generated Recipe:", data);
 
                 if (response.ok) {
-                    setRecipe(data[0]); // Assuming the backend returns a list of recipes
+                    const generatedRecipe = data[0]; // Assuming the backend returns a list
+                    setRecipe(generatedRecipe);
+
+                    // Fetch recipe details using the recipe ID
+                    fetchRecipeDetails(generatedRecipe.id);
                 } else {
                     setError(data.error || "Failed to fetch recipe.");
                 }
             } catch (err) {
                 setError("Error fetching recipe.");
+                console.error(err);
+            }
+        };
+
+        const fetchRecipeDetails = async (recipeId) => {
+            try {
+                const response = await fetch(`http://127.0.0.1:5000/getRecipeDetails/${recipeId}`);
+                const data = await response.json();
+                console.log("Recipe Details:", data);
+
+                if (response.ok) {
+                    setDetails(data);
+                } else {
+                    setError(data.error || "Failed to fetch recipe details.");
+                }
+            } catch (err) {
+                setError("Error fetching recipe details.");
                 console.error(err);
             }
         };
@@ -48,7 +71,7 @@ export default function Popup2({ onClose }) {
         );
     }
 
-    if (!recipe) {
+    if (!recipe || !details) {
         return (
             <div className={styles.backdisplay}>
                 <div className={styles.hold}>
@@ -64,8 +87,10 @@ export default function Popup2({ onClose }) {
         image,
         usedIngredients = [],
         missedIngredients = [],
-        unusedIngredients = []
+        unusedIngredients = [],
     } = recipe;
+
+    const { servings, readyInMinutes, instructions, analyzedInstructions } = details;
 
     return (
         <div className={styles.backdisplay}>
@@ -85,7 +110,7 @@ export default function Popup2({ onClose }) {
                     />
                 </svg>
                 <h1 className={styles.title}>{title}</h1>
-                <p>Spoonacular AI Likes: {likes}</p>
+                <p>Likes: {likes}</p>
                 <img src={image} alt={title} className={styles.recipeImage} />
                 <h2>Used Ingredients</h2>
                 <ul className={styles.ingredientsList}>
@@ -126,6 +151,19 @@ export default function Popup2({ onClose }) {
                         </li>
                     ))}
                 </ul>
+                <h2>Recipe Details</h2>
+                <p>Servings: {servings}</p>
+                <p>Ready in: {readyInMinutes} minutes</p>
+                <h2>Instructions</h2>
+                {analyzedInstructions && analyzedInstructions.length > 0 ? (
+                    <ol>
+                        {analyzedInstructions[0].steps.map((step) => (
+                            <li key={step.number}>{step.step}</li>
+                        ))}
+                    </ol>
+                ) : (
+                    <p>{instructions || "No detailed instructions available."}</p>
+                )}
                 <button className={styles.close} onClick={onClose}>
                     Close
                 </button>
