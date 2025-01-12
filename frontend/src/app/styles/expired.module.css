@@ -9,3 +9,14 @@
     --white: #C1C6E1;
     --grey: #D9D9D9;
 }
+
+.frame {
+    position: relative;
+    width: 25%; 
+    height: 25vh;
+    background: var(--blue6);
+    border-radius: 42px;
+    margin-right: 3%;
+    margin-top: -10%;
+    margin-left: 35%;
+}

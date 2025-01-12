@@ -1,4 +1,3 @@
-# from timezone_utils import *  # Import the utility function for timezone conversion
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
@@ -63,17 +62,17 @@ def store_item():
 @app.route("/getAllItems", methods=["GET"])
 def get_all_items():
     try:
-        # Query all items from the database
-        items = Item.query.all()
+        # Query all items sorted by expiration_date in ascending order (earliest to latest)
+        items = Item.query.order_by(Item.expiration_date.asc()).all()
 
-        # Convert each item's date_added to local timezone
+        # Prepare the response
         response = []
         for item in items:
             response.append({
                 "id": item.id,
                 "name": item.name,
                 "expiration_date": item.expiration_date.strftime("%Y-%m-%d %H:%M:%S"),
-                "date_added": item.date_added.strftime("%Y-%m-%d %H:%M:%S"),  # Convert to local timezone
+                "date_added": item.date_added.strftime("%Y-%m-%d %H:%M:%S"),
                 "quantity": item.quantity,
             })
 

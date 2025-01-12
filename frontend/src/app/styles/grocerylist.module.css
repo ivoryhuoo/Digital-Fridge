@@ -10,7 +10,60 @@
     --grey: #D9D9D9;
 }
 
+.container {
+    position: relative; /* Sets a reference point for stacking */
+    width: 20%; /*width of container*/
+    height: 45vh; /*height of container*/
+
+    /*adjust margins */
+    margin-top: 20%; 
+    margin-left: 12%;
+}
 .frame {
+    position: absolute; /* Stack element relative to the container */
+    
+    /*adjust frame to container size*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 42px;
-    background: #297BD4;
+    background: var(--blue3);
+    z-index: 1; /* Ensures it's below the lining */
+}
+.lining{
+    position: absolute;
+
+    /*adjust position*/
+    top: 20%; 
+    left: 0; 
+
+    /*adjust size*/
+
+    width: 100%; /* Adjust to span across the frame */
+    height: 1%; /* Visible height for the line */
+    background: #FFF;
+    z-index: 2;
+}
+.lining2{
+    position: absolute;
+    /*adjust position*/
+    top: 0;
+    left: 13%;
+    /* adjust size*/
+    width: 1%;
+    height: 21%;
+    background: #FFF;
+    z-index: 2;
+}
+.liningcontain{
+    position: absolute;
+    /*adjust position*/
+    top: 30%;
+    left: 15%;
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
 }
