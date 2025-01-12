@@ -26,6 +26,8 @@
 }
 
 .description {
+    font-family: Outfit, serif;
+    font-weight: 500;
     border-radius: 42px;
     background: rgba(217, 217, 217, 0.5); /* Transparent background */
     width: 60%;
@@ -46,12 +48,16 @@
 }
 
 .additionalText {
+    font-family: Outfit, serif;
+    font-weight: 500;
     font-size: 12px; /* Smaller font size for subtext */
     color: #ffffff; /* Text color matches recipe name */
     margin-top: 0; /* Keep aligned without extra spacing */
 }
 
 .text {
+    font-family: Outfit, serif;
+    font-weight: 700;
     position: absolute; 
     margin-top: 4%;
     margin-left: 6%;

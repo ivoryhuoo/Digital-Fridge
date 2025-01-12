@@ -8,9 +8,6 @@ import Popup2 from './popup2.js';
 export default function Recipe() {
     const [recipeName, setRecipeName] = useState("Loading...");
     const [likes, setLikes] = useState(null); // State to store likes
-    const [clicked, setClicked] = useState(false);
-    const handleClick = () => setClicked(true);
-    const handleClose = () => setClicked(false);
 
     useEffect(() => {
         const fetchRecipe = async () => {
@@ -37,31 +34,6 @@ export default function Recipe() {
 
     return (
         <div className={styles.frame}>
-            {/* Expand Icon */}
-            <Button onClick={handleClick}>
-            
-            
-            
-        
-
-            <svg
-                className={styles.expand_icon}
-                xmlns="http://www.w3.org/2000/svg"
-                width="21"
-                height="21"
-                viewBox="0 0 21 21"
-                fill="none"
-            >
-                <path
-                    d="M15.25 1H20M20 1V5.75M20 1L12.875 8.125M5.75 20H1M1 20V15.25M1 20L8.125 12.875M15.25 20H20M20 20V15.25M20 20L12.875 12.875M5.75 1H1M1 1V5.75M1 1L8.125 8.125"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-            </svg>
-            </Button>
-            {clicked && <Popup2 onClose={handleClose} />}
 
             {/* Bowl Icon */}
             <svg

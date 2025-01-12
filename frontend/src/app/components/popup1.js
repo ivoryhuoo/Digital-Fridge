@@ -5,14 +5,6 @@ import { useState } from 'react';
 import React from "react";
 
 export default function popup1({onClose}) {
-    const [itemName, setItemName] = useState('');
-
-    // Handle the action when the button is clicked
-    const handleAddItem = (event) => {
-        event.preventDefault(); 
-        console.log(itemName); // Log the item name when the button is clicked
-        onClose(); // Close the popup after the item is added
-    };
     
     return (
         <div className={styles.backdisplay}>
@@ -23,24 +15,15 @@ export default function popup1({onClose}) {
             <h1 className={styles.title}>Add Fridge Item</h1>
             <form className={styles.form} action="/send-data-here" method="post">
             <label for="first">Item Name:</label>
-            <input type="text" id="item-name" name="item-name" onChange={(e) => setItemName(e.target.value)} required/>
+            <input type="text" id="item-name" name="item-name" required/>
             <label for="last">Quantity:</label>
             <input type="text" id="quantity" name="quantity" required/>
             <label for="last">Date Added:</label>
             <input type="text" id="date-added" name="date-added" required/>
             <label for="last">Expiration Date:</label>
             <input type="text" id="expiration-date" name="expiration-date"/>
-            <button className={styles.close} onClick={handleAddItem} type="add">Add</button>
+            <button className={styles.close} onClick={onClose} type="add">Add</button>
             </form>
-            {/* <script>
-                const formEl = document.querySelector('.form');
-
-                formEl.addEventListener('submit', event => {
-                    event.preventDefault();
-                    const formData = new FormData(formEl);
-                    console.log(formData.get('username'));
-                });
-            </script> */}
             </div>
             </div>
         
