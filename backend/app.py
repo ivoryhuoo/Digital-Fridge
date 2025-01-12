@@ -195,9 +195,9 @@ def get_recipe_name():
         if response.status_code == 200:
             recipes = response.json()
             if recipes:  # Ensure at least one recipe is returned
-                # Extract and return the recipe title
                 recipe_title = recipes[0]["title"]
-                return jsonify({"recipe_name": recipe_title}), 200
+                recipe_likes = recipes[0]["likes"]  # Extract the likes
+                return jsonify({"recipe_name": recipe_title, "likes": recipe_likes}), 200
             else:
                 return jsonify({"error": "No recipes found"}), 404
         else:
