@@ -206,6 +206,23 @@ def get_recipe_name():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route("/getExpiryDates", methods=["GET"])
+def get_expiry_dates():
+    try:
+        # Query all items sorted by expiration_date in ascending order
+        items = Item.query.order_by(Item.expiration_date.asc()).all()
+
+        # Prepare the response with just the item name and expiration date
+        response = [
+            {"name": item.name, "expiration_date": item.expiration_date.strftime("%Y-%m-%d %H:%M:%S")}
+            for item in items
+        ]
+
+        return jsonify(response), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 # Reset database
 @app.route("/resetDatabase", methods=["POST"])
 def reset_database():
