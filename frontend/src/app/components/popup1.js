@@ -1,15 +1,57 @@
 "use client";
 import styles from "../styles/popup1.module.css";
+
 import { useState } from "react";
 import React from "react";
 
-export default function popup1({onClose}) {
-    
+export default function Popup1({ onClose }) {
+    const [itemName, setItemName] = useState('');
+    const [quantity, setQuantity] = useState('');
+    const [dateAdded, setDateAdded] = useState('');
+    const [expirationDate, setExpirationDate] = useState('');
 
+    const handleAddItem = async (event) => {
+        event.preventDefault();
+
+        // Ensure the date values are formatted properly for the backend
+        const formattedDateAdded = new Date(dateAdded).toISOString().slice(0, 19).replace('T', ' ');
+        const formattedExpirationDate = new Date(expirationDate).toISOString().slice(0, 19).replace('T', ' ');
+    
+        const itemData = {
+            name: itemName,
+            quantity: parseInt(quantity),
+            date_added: formattedDateAdded, // Use formatted date
+            expiration_date: formattedExpirationDate, // Use formatted date
+        };
+    
+        try {
+            const response = await fetch("http://127.0.0.1:5000/storeItem", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(itemData),
+            });
+    
+            const data = await response.json();
+    
+            if (response.ok) {
+                console.log("Item added successfully:", data);
+                alert("Item added successfully!");
+                onClose(); // Close the popup after the item is added
+            } else {
+                console.error("Error adding item:", data.error);
+                alert(`Error: ${data.error}`);
+            }
+        } catch (error) {
+            console.error("Error connecting to the server:", error);
+            alert("Error connecting to the server. Please try again.");
+        }
+    };    
+    
     return (
         <div className={styles.backdisplay}>
-            <div className={styles.hold}>
-                        <svg
+            <svg
                 className={styles.arrow}
                 onClick={onClose}
                 xmlns="http://www.w3.org/2000/svg"
@@ -23,32 +65,49 @@ export default function popup1({onClose}) {
                     fill="#031996"
                 />
             </svg>
-
-            
-            <h1 className={styles.title}>Add Fridge Item</h1>
-            <form className={styles.form} action="/send-data-here" method="post">
-            <div className={styles.contain}>
-            <div className={styles.item}>
-            <label className={styles.name} for="first">Item Name:</label>
-            <input className={styles.fill} type="text" id="item-name" name="item-name" required/>    
+            <div className={styles.hold}>
+                <h1 className={styles.title}>Add Fridge Item</h1>
+                <form className={styles.form} onSubmit={handleAddItem}>
+                    <label htmlFor="item-name">Item Name:</label>
+                    <input
+                        type="text"
+                        id="item-name"
+                        name="item-name"
+                        value={itemName}
+                        onChange={(e) => setItemName(e.target.value)}
+                        required
+                    />
+                    <label htmlFor="quantity">Quantity:</label>
+                    <input
+                        type="number"
+                        id="quantity"
+                        name="quantity"
+                        value={quantity}
+                        onChange={(e) => setQuantity(e.target.value)}
+                        required
+                    />
+                    <label htmlFor="date-added">Date Added:</label>
+                    <input
+                        type="datetime-local"
+                        id="date-added"
+                        name="date-added"
+                        value={dateAdded}
+                        onChange={(e) => setDateAdded(e.target.value)}
+                        required
+                    />
+                    <label htmlFor="expiration-date">Expiration Date:</label>
+                    <input
+                        type="datetime-local"
+                        id="expiration-date"
+                        name="expiration-date"
+                        value={expirationDate}
+                        onChange={(e) => setExpirationDate(e.target.value)}
+                    />
+                    <button className={styles.close} type="submit">
+                        Add
+                    </button>
+                </form>
             </div>
-            <div className={styles.item}>
-            <label className={styles.name} for="last">Quantity:</label>
-            <input className={styles.fill}  type="text" id="quantity" name="quantity" required/>
-            </div>
-            <div className={styles.item}>
-            <label className={styles.name} for="last">Date Added:</label>
-            <input className={styles.fill}  type="text" id="date-added" name="date-added" required/>
-            </div>
-            <div className={styles.item}>
-            <label className={styles.name} for="last">Expiration Date:</label>
-            <input className={styles.fill}  type="text" id="expiration-date" name="expiration-date"/>  
-            </div>
-            </div>
-            <button className={styles.close} onClick={onClose} type="add">Add</button>
-            </form>
-            </div>
-
         </div>
     );
 }
