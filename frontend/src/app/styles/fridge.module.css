@@ -1,30 +1,11 @@
-:root {
-    --background: #ffffff;
-    --foreground: #171717;
-    --blue1: #A3CCE0;
-    --blue2: #00ABFA;
-    --blue3: #297BD4;
-    --blue4: #031996;
-    --blue5: #064972;
-    --white: #FFFFFF;
-    --grey: #D9D9D9;
-    --beige: #EEEBEB;
-}
-/* width: 1280px, height: 832px */
-html, body
-{
-    height: 100%;
-}
+
 
 .frame {
     margin-right: 3%;
     margin-top: -10%;
-    /* tryna center vertically might change margin-top */
     float: right;
-    /* keep right */
     width: 32%;
     height: 83vh;
-    /* viewport height */
     flex-shrink: 0;
     border-radius: 61px;
     background: var(--blue4);
@@ -32,8 +13,7 @@ html, body
     justify-content: center;
     position: relative;
     padding-left: 2%;
-    padding-top: 1.5%
-    /* should find a centering way */
+    padding-top: 1.5%;
 }
 
 .lining {
@@ -41,7 +21,6 @@ html, body
     z-index: 2;
     border-radius: 28px;
     background: #FFFFFF;
-    /* weird bug can't use typical colours */
     width: 88%;
     height: 93%;
     flex-shrink: 0;
@@ -58,15 +37,27 @@ html, body
     align-items: flex-end;
     position: relative;
 }
+
+.ingredientImage {
+    width: 70px; /* Increased size for larger circles */
+    height: 70px; /* Match width for perfect circle */
+    border-radius: 50%; /* Maintain circular shape */
+    object-fit: cover; /* Ensure the image scales properly */
+    background-color: var(--white); /* Background color inside the circle */
+    padding: 0; /* No padding for clean fit */
+}
+
 .empties {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Match parent width */
-    height: 100%; /* Match parent height */
-    position: relative; /* Ensure relative positioning for children */
-    gap: 5%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    gap: 7%; /* Adjust gap for proper spacing */
 }
+
+
 .shelves {
     z-index: 100;
     width: 100%;
@@ -75,25 +66,32 @@ html, body
     background: var(--blue4);
     display: flex;
     position: absolute;
-
 }
 
 .info {
     border-radius: 18px;
-    border: 3px solid var(--blue4);
+    border: 2px solid var(--blue4);
     background: var(--white);
-    width: 196px;
-    height: 105px;
+    width: 220px; /* Increased width */
+    height: auto; /* Adjust height automatically */
+    padding: 10px; /* Add padding for better spacing */
     flex-shrink: 0;
     display: flex;
+    flex-direction: column; /* Stack the text vertically */
 }
 
 .words {
-    font-size: 14px;
-    margin-left: 5%;
-    margin-top: 3%;
-    flex-direction: column;
+    color: black;
+    font-family: Outfit, serif;
+    font-weight: 500;
+    font-size: 12px; /* Reduced font size slightly */
+    line-height: 1.4; /* Add line height for better readability */
+    margin: 0; /* Remove unnecessary margins */
 }
+
 .delete {
-    color:red;
+    color: red;
+    font-size: 12px; /* Match with the other text */
+    text-align: center; /* Center-align the text */
+    margin-top: 8px; /* Add space above the button */
 }
