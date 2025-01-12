@@ -8,7 +8,8 @@ export default function popup1({onClose}) {
 
     return (
         <div className={styles.backdisplay}>
-            <svg
+            <div className={styles.hold}>
+                        <svg
                 className={styles.arrow}
                 onClick={onClose}
                 xmlns="http://www.w3.org/2000/svg"
@@ -22,20 +23,32 @@ export default function popup1({onClose}) {
                     fill="#031996"
                 />
             </svg>
-            <div className={styles.hold}>
+
+            
             <h1 className={styles.title}>Add Fridge Item</h1>
             <form className={styles.form} action="/send-data-here" method="post">
-            <label for="first">Item Name:</label>
-            <input type="text" id="item-name" name="item-name" required/>
-            <label for="last">Quantity:</label>
-            <input type="text" id="quantity" name="quantity" required/>
-            <label for="last">Date Added:</label>
-            <input type="text" id="date-added" name="date-added" required/>
-            <label for="last">Expiration Date:</label>
-            <input type="text" id="expiration-date" name="expiration-date"/>
+            <div className={styles.contain}>
+            <div className={styles.item}>
+            <label className={styles.name} for="first">Item Name:</label>
+            <input className={styles.fill} type="text" id="item-name" name="item-name" required/>    
+            </div>
+            <div className={styles.item}>
+            <label className={styles.name} for="last">Quantity:</label>
+            <input className={styles.fill}  type="text" id="quantity" name="quantity" required/>
+            </div>
+            <div className={styles.item}>
+            <label className={styles.name} for="last">Date Added:</label>
+            <input className={styles.fill}  type="text" id="date-added" name="date-added" required/>
+            </div>
+            <div className={styles.item}>
+            <label className={styles.name} for="last">Expiration Date:</label>
+            <input className={styles.fill}  type="text" id="expiration-date" name="expiration-date"/>  
+            </div>
+            </div>
             <button className={styles.close} onClick={onClose} type="add">Add</button>
             </form>
             </div>
+
         </div>
     );
 }

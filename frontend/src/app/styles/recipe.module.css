@@ -33,7 +33,7 @@
     width: 60%;
     height: 15vh;
     position: relative;
-    top: -9%; /* Position box */
+    top: 30%; /* Position box */
     left: 5%;
     display: flex;
     flex-direction: column; /* Stack items vertically */
@@ -60,7 +60,7 @@
     font-weight: 700;
     position: absolute; 
     margin-top: 4%;
-    margin-left: 6%;
+    margin-left: 8%;
     font-size: 20px; /* Adjust as needed */
     color: #ffffff; /* Text color */
 }
