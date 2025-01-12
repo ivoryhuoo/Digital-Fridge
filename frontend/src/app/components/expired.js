@@ -1,7 +1,29 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
 import styles from "../styles/expired.module.css";
 
 export default function Expired() {
-    const items = Array.from({ length: 3 }, (_, i) => `Scrollable Content Item ${i + 1}`);
+    const [items, setItems] = useState([]); // State to store items
+
+    useEffect(() => {
+        const fetchItems = async () => {
+            try {
+                const response = await fetch("http://127.0.0.1:5000/getExpiryDates"); // Fetch expiry dates
+                const data = await response.json();
+
+                if (response.ok) {
+                    setItems(data); // Set the fetched items
+                } else {
+                    console.error("Failed to fetch items:", data.error);
+                }
+            } catch (error) {
+                console.error("Error fetching items:", error);
+            }
+        };
+
+        fetchItems();
+    }, []);
 
     return (
         <div className={styles.frame}>
@@ -35,7 +57,7 @@ export default function Expired() {
             <div className={styles.scroll}>
                 {items.map((item, index) => (
                     <p key={index}>
-                        {item}
+                        {item.name} - Expires: {item.expiration_date}
                     </p>
                 ))}
             </div>
