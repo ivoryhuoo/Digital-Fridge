@@ -18,7 +18,7 @@ html, body
 
 .frame {
     margin-right: 3%;
-    margin-top: 5%;
+    margin-top: -10%;
     /* tryna center vertically might change margin-top */
     float: right;
     /* keep right */
