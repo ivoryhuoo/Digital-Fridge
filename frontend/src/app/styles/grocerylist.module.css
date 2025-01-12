@@ -82,3 +82,116 @@
     z-index: 2;
     
 }
+.lining4{
+    position: absolute;
+    /*adjust position*/
+    top: 44%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining5{
+    position: absolute;
+    /*adjust position*/
+    top: 51%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining6{
+    position: absolute;
+    /*adjust position*/
+    top: 58%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining7{
+    position: absolute;
+    /*adjust position*/
+    top: 65%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining8{
+    position: absolute;
+    /*adjust position*/
+    top: 72%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining9{
+    position: absolute;
+    /*adjust position*/
+    top: 79%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining10{
+    position: absolute;
+    /*adjust position*/
+    top: 79%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.lining11{
+    position: absolute;
+    /*adjust position*/
+    top: 86%;
+    left: 15%;
+
+    /*adjust size*/
+    width: 73%;
+    height: 0.5%;
+    background: #FFF;
+    z-index: 2;
+    
+}
+.checkbox{
+    width: 22%;
+    height: 12%;
+    flex-shrink: 0;
+    z-index: 2000;
+    position: absolute
+
+   
+}
