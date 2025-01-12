@@ -11,37 +11,52 @@
     --beige: #EEEBEB;
 }
 
+.container {
+    display: flex; /* Enables horizontal alignment */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Vertically center items */
+    gap: 20px; /* Adds space between the buttons */
+    padding: 20px; /* Optional: Adjust spacing around the buttons */
+    margin-top: 200px
+}
+
 .main {
     border-radius: 65px;
     background: var(--beige);
     width: 285px;
     height: 81px;
-    flex-shrink: 0;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    padding-left: 1%
+    padding-left: 10px; /* Adjusts the spacing inside the button */
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.main:hover {
+    background: var(--grey);
 }
 
 .text {
     color: black;
-    font-family: Outfit;
+    font-family: Outfit, sans-serif;
     font-size: 22px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
-    margin-left: 10%
+    margin-left: 10px; /* Adjust spacing between icon and text */
 }
 
 .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
+    margin-right: 10px; /* Moves icon closer to the text */
+    flex-shrink: 0; /* Ensures the icon doesn’t shrink in size */
 }
 
 .add {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 100;
-    margin-top: -68%;
-    margin-left: 25%;
-    /* this is bad fix later */
-    position: absolute
 }
-
